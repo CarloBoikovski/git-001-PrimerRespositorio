@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        #banner {
+            background-color: brown;
+            width: 450px;
+            height: 300px;
+            position: absolute;
+            left: 400px;
+            top: 50px;
+            font-size: 36px;
+            text-align: center;
+        }
+        
+        #img {
+            float: left;
+            margin: 150px;
+            width: 350px;
+            height: 200px;
+        }
+        
+        #img1,
+        #img2,
+        #img3 {
+            float: left;
+            margin: 150px;
+            width: 350px;
+            height: 200px;
+            font-size: 36px;
+            color: coral;
+        }
+    </style>
+
+
+    <script src="../JQueryLibreria/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() { /* Ready, el codigo que se va a ejecutar después de cargar la pagina */
+            /*  var cerrarBanner = document.getElementById("cerrar"); */
+
+            /*   cerrarBanner.addEventListener("click", cerrar_Banner, false);  */
+            /* activa el evento cuanto le damos click */
+
+
+            /*       cerrarBanner.addEventListener("mouseover", cerrar_Banner, false); */
+            /* Activa el eventocuando le pasamos el mouse por arriba */
+
+            /*    document.getElementById("cerrar").addEventListener("click", cerrar_Banner, false); */
+
+
+            /* acá vamos a ir borrando las imagenes */
+            /*   document.getElementById("img1").addEventListener("click", carrito, false); */
+
+            var imagenes = document.querySelectorAll("#carrete img");
+
+            for (let i = 0; i < imagenes.length; i++) {
+
+                imagenes[i].addEventListener("click", carrito, false);
+
+
+            }
+
+        });
+
+        /*     function cerrar_Banner() {
+                $("#banner").remove();
+
+
+            } */
+
+        function carrito(num) {
+            /*  $("#img1").replaceWith("<div id='sustitucion'>Agregado al Carrito</div>");*/
+            /* Nos mostrará este texto al darle click a la foto */
+            var numero = num.target;
+
+            if (numero == img1) {
+
+                $("#img1").replaceWith("<div id='img1'><img src='../../../Imagenes/perrinEnojado.jpg'></div>");
+            }
+
+
+            if (numero == img2) {
+
+                $("#img2").replaceWith("<div id='img2'><img src='../../../Imagenes/perrinEnojado.jpg'></div>");
+            }
+            if (numero == img3) {
+
+                $("#img3").replaceWith("<div id='img3'><img src='../../../Imagenes/perrinEnojado.jpg'></div>");
+            }
+        }
+    </script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--   <div id="banner">
+        Banner de prueba
+        <p id="cerrar"> Cerrar</p>
+    </div> -->
+    <div id="carrete">
+        <img src="../../../Imagenes/DogGoogles.jpg" alt="" width="300" height="200" id="img1">
+        <img src="../../../Imagenes/montanias.jpg" alt="" width="300" height="200" id="img2">
+        <img src="../../../Imagenes/arbol.jpg" alt="" width="300" height="200" id="img3">
+
+    </div>
+
+</body>
+
+</html>
